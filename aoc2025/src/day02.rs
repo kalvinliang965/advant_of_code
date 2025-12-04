@@ -170,8 +170,7 @@ mod tests {
         assert_eq!(vec![1010], find_invalid_ids_in_range(998, 1012));
     }
 
-    #[test]
-    fn test_simple() {
+    #[test] fn test_simple() {
         let ranges = vec![(11,22), (95,115), (998, 1012), (1188511880, 1188511889), (222220, 222224), (1698522, 1698528), (446443, 446449), (38593856,38593862)];
         assert_eq!(1227775554, find_invalid_ids(ranges));
     }
