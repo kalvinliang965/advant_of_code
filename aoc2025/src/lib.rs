@@ -1,7 +1,7 @@
 mod day01;
 mod day02;
 mod day03;
-
+mod day04;
 
 pub fn run_day01(filepath: &str) -> u32 {
     let v = day01::read_input(filepath);
@@ -18,6 +18,12 @@ pub fn run_day02(filepath: &str) -> u128 {
 pub fn run_day03(filepath: &str) -> u64 {
     let v = day03::read_input(filepath);
     day03::solve2(v.iter().map(|s| s.as_str()).collect())
+}
+
+
+pub fn run_day04(filepath:& str) -> u64 {
+    let mut v = day04::read_input(filepath);
+    day04::solve2(&mut v)
 }
 
 #[cfg(test)]
@@ -39,6 +45,13 @@ mod tests {
     fn test_day03_sample() {
         let exp = 3121910778619;
         let act = run_day03("inputs/day03/input1.txt");
+        assert_eq!(exp, act);
+    }
+
+    #[test]
+    fn test_day04_sample() {
+        let exp = 13;
+        let act = run_day04("inputs/day04/input1.txt");
         assert_eq!(exp, act);
     }
 }
