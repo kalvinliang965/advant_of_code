@@ -4,6 +4,7 @@ mod day03;
 mod day04;
 mod day05;
 mod day06;
+mod day07;
 
 pub fn run_day01(filepath: &str) -> u32 {
     let v = day01::read_input(filepath);
@@ -35,6 +36,11 @@ pub fn run_day05(filepath: &str) -> u64 {
 pub fn run_day06(filepath: &str) -> u64 {
     let map = day06::read_input2(filepath).expect("failed to parse file");
     day06::solve(&map)
+}
+
+pub fn run_day07(filepath: &str) -> u64 {
+    let mut v = day07::read_input(filepath).unwrap();
+    day07::solve2(&mut v)
 }
 
 #[cfg(test)]
@@ -75,6 +81,12 @@ mod tests {
     fn test_day06_sample() {
         let exp = 3263827;
         let act = run_day06("inputs/day06/input1.txt");
+        assert_eq!(exp, act);
+    }
+    #[test]
+    fn test_day07_sample() {
+        let exp = 40;
+        let act = run_day07("inputs/day07/input1.txt");
         assert_eq!(exp, act);
     }
 }
