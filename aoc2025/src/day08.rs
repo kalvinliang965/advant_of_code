@@ -131,7 +131,7 @@ impl DSU {
         while self.Parent[root as usize] != root {
             root = self.Parent[root  as usize];
         }
-        while self.Parent[node as usize] != root {
+        while self.Parent[node as usize] != node {
             let next = self.Parent[node as usize];
             self.Parent[node as usize] = root;
             node = next;
